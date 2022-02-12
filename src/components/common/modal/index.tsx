@@ -4,7 +4,7 @@ import style from "./modal.module.scss";
 type ModalPropsType = {
   active: boolean;
   setActive: React.Dispatch<React.SetStateAction<boolean>>;
-  children: any;
+  children: React.ReactNode;
 };
 
 const Modal: React.FC<ModalPropsType> = (props) => {
