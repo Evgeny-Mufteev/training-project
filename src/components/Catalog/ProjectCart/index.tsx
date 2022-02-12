@@ -11,7 +11,7 @@ type ProjectsCartPropsType = {
 
 const ProjectsCart: React.FC<ProjectsCartPropsType> = (props) => {
   const { productCardTitle, productCardPrice, webp, jpg } = props;
-  const [modalActive, setModalActive] = useState(true);
+  const [modalActive, setModalActive] = useState(false);
   return (
     <div className={style["product-card"]}>
       <div className={style["product-card__inner"]}>
