@@ -12,15 +12,11 @@ const Modal: React.FC<ModalPropsType> = (props) => {
   return (
     <div
       role="presentation"
-      className={active ? `${style.active} ${style.modal}` : `${style.modal}`}
+      className={`${style.modal} ${active ? style.active : ""}`}
       onClick={() => setActive(false)}>
       <div
         role="presentation"
-        className={
-          active
-            ? `${style.modal__content} ${style.modal}`
-            : `${style.modal__content}`
-        }
+        className={`${style.modal__content} ${active ? style.active : ""}`}
         onClick={(e) => e.stopPropagation()}>
         {children}
       </div>
