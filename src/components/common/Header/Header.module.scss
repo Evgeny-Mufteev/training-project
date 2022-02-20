@@ -50,6 +50,18 @@
   }
 }
 
+.registration__wrap {
+  width: 150px;
+  height: 50px;
+}
+
+.registration__firstName,
+.registration__lastName {
+  width: 150px;
+  height: 25px;
+  color: #000;
+}
+
 .nav-link {
   color: #fff;
   text-decoration: none;

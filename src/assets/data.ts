@@ -1,4 +1,10 @@
 /* eslint-disable no-useless-concat */
+export type PostsDataType = {
+  id: number;
+  header: string;
+  content: string;
+}[];
+
 const data = [
   {
     id: 1,

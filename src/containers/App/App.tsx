@@ -7,6 +7,7 @@ import NotFoundPage from "../NotFoundPage";
 import OnePostPage from "../OnePostPage";
 import PostsPage from "../PostsPage";
 import RegistrationPage from "../RegistrationPage";
+import WeatherPage from "../WeatherPage";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/registration" element={<RegistrationPage />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/catalog" element={<CatalogPage />} />
+        <Route path="/weather" element={<WeatherPage />} />
       </Route>
     </Routes>
   );

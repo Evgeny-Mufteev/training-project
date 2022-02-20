@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { userRegistrationAction } from "../../../store/actions";
+import { getUserData } from "../../../store/selectors";
 import Input from "../../common/Input";
 
 import style from "../registration.module.scss";
@@ -10,15 +14,23 @@ const RegistrationForm: React.FC = () => {
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
+  const userData = useSelector(getUserData);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (userData.firstName && userData.lastName) {
+      navigate("/");
+    }
+  }, [userData.firstName, userData.lastName]);
+
   const handler = () => {
     if (repeatPassword === password) {
-      console.log({
-        firstName,
-        lastName,
-        email,
-        password,
-        repeatPassword,
-      });
+      setTimeout(
+        () => dispatch(userRegistrationAction({ lastName, firstName })),
+        3000
+      );
     } else {
       console.log("Пароли не совпадают");
     }
